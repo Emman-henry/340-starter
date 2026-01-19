@@ -1,0 +1,57 @@
+body {
+  background: red !important;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between; /* pushes left & right to edges */
+  align-items: center;            /* vertically center */
+  padding: 10px 20px;
+  width: 100%;                    /* important */
+  box-sizing: border-box;         /* includes padding in width */
+  background-color: #f5f5f5;
+}
+
+#top-header .left h1 {
+  margin: 0;                      /* remove default h1 margin */
+  font-size: 1.5rem;
+}
+
+#top-header .right h2 {
+  margin: 0;                      /* remove default h2 margin */
+  font-size: 1.2rem;
+}
+
+#top-header .right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+}
+
+#top-header .right a:hover {
+  color: #007bff;
+}
+/* Navigation container */
+#main-nav ul {
+  display: flex;                   /* horizontal layout */
+  justify-content: space-between;   /* spread items across the full width */
+  list-style: none;                /* remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+/* Optional: spacing inside links */
+#main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+#main-nav ul li a:hover {
+  color: #007bff;
+}
+/* Test CSS: make entire page background red */
+body {
+  background-color: red;
+}
