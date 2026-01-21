@@ -1,57 +1,209 @@
+/* Reset */
 body {
-  background: red !important;
-}
-
-#top-header {
-  display: flex;
-  justify-content: space-between; /* pushes left & right to edges */
-  align-items: center;            /* vertically center */
-  padding: 10px 20px;
-  width: 100%;                    /* important */
-  box-sizing: border-box;         /* includes padding in width */
-  background-color: #f5f5f5;
-}
-
-#top-header .left h1 {
-  margin: 0;                      /* remove default h1 margin */
-  font-size: 1.5rem;
-}
-
-#top-header .right h2 {
-  margin: 0;                      /* remove default h2 margin */
-  font-size: 1.2rem;
-}
-
-#top-header .right a {
-  text-decoration: none;
-  color: #333;
-  font-weight: normal;
-}
-
-#top-header .right a:hover {
-  color: #007bff;
-}
-/* Navigation container */
-#main-nav ul {
-  display: flex;                   /* horizontal layout */
-  justify-content: space-between;   /* spread items across the full width */
-  list-style: none;                /* remove bullets */
-  padding: 0;
   margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Center content vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Optional: spacing inside links */
-#main-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 10px 15px;
+/* Background layer */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("/images/site/checkerboard.jpg") center / cover no-repeat;
+  z-index: -1;
 }
 
-#main-nav ul li a:hover {
-  color: #007bff;
+/* Main content container */
+.content {
+  width: 90%; /* mobile-first */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  /* Header */
+  #top-header {
+    display: flex;
+    justify-content: space-between; /* left/right stay in place */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+
+    .left {
+      h1 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    .right {
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+
+        a {
+          text-decoration: none;
+          color: #333;
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  /* Navigation */
+  #main-nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        a {
+          display: block;
+          padding: 10px 15px;
+          font-weight: bold;
+          text-decoration: none;
+          color: #333;
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  /* Main content */
+  main {
+    padding: 20px 0;
+  }
 }
-/* Test CSS: make entire page background red */
-body {
-  background-color: red;
+
+/* Image + Products overlay */
+.image-products {
+  position: relative;
+  margin: 40px 0;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .products-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .product {
+      width: 280px;
+      background: rgba(255, 255, 255, 0.75); /* semi-transparent */
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+      .own-now {
+        margin-top: 15px;
+        padding: 12px 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        background: #021121;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+/* Section three: upgrades + reviews */
+.section-three {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile stacked */
+  gap: 40px;
+  margin: 60px 0;
+
+  .upgrades,
+  .reviews {
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .upgrades-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile single column */
+    gap: 15px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  .reviews {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      li {
+        margin-bottom: 15px;
+        padding: 12px 15px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .rating {
+          font-weight: bold;
+          color: #021121;
+        }
+      }
+    }
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 900px) {
+  .content {
+    width: 40%; /* centered content with side margins */
+  }
+
+  .section-three {
+    grid-template-columns: 1fr 1fr; /* two columns */
+    .upgrades-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+    }
+  }
 }

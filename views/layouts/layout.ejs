@@ -3,15 +3,21 @@
 <head>
   <%- include("../partials/head") %>
 </head>
+
 <body>
-  <%- include("../partials/header") %>
-  <%- include("../partials/navigation") %>
+  <!-- Background layer -->
+  <div class="bg"></div>
 
-  <!-- THIS IS WHERE index.ejs CONTENT GOES -->
-  <main>
-    <%- body %>
-  </main>
+  <!-- Scrollable content -->
+  <div class="content">
+    <%- include("../partials/header") %>
+    <%- include("../partials/navigation") %>
 
-  <%- include("../partials/footer") %>
+    <main>
+      <%- body %>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </div>
 </body>
 </html>
