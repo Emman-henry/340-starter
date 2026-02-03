@@ -1,0 +1,43 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "render.com",
+            "connectString": "postgresql://emman340:TwHTjbNXcZSfynmlk503ydcCkFLKwIMt@dpg-d5mb1le3jp1c739vu1o0-a.ohio-postgres.render.com/emman340"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "emman340-rebuld",
+            "connectString": "postgresql://emman340_rebuld_user:5hkr6bBEA7YRQ4M2afm5u5PMbvxmb2SL@dpg-d607tfbuibrs73d9u040-a.ohio-postgres.render.com/emman340_rebuld"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "340-rebuild",
+            "connectString": "postgresql://db_340_rebuld_user:YHKgF4OcmfNhQFSrygI6l0q7h4LeljdC@dpg-d6082ie3jp1c73cocdrg-a.ohio-postgres.render.com/db_340_rebuld"
+        }
+    ]
+}
