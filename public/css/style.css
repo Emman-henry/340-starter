@@ -62,7 +62,7 @@ body {
   }
 
   /* Navigation */
-  #main-nav {
+  .nav {
     ul {
       display: flex;
       justify-content: space-between;
